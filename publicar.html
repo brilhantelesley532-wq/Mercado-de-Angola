@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Anúncio | Mercado de Angola</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🌍 Mercado de Angola</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="categorias.html">Categorias</a>
+                <a href="publicar.html" class="btn-publicar active">Publicar</a>
+                <a href="login.html">Entrar</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding: 40px 0;">
+        <div class="formulario-publicacao" style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: var(--sombra);">
+            <h2 style="margin-bottom: 32px; text-align: center;">➕ Publicar Novo Anúncio</h2>
+
+            <form>
+                <div class="campo" style="margin-bottom: 24px;">
+                    <label>Título do Anúncio *</label>
+                    <input type="text" placeholder="Ex: Toyota Corolla 2018 em ótimo estado" required>
+                </div>
+
+                <div class="campo" style="margin-bottom: 24px;">
+                    <label>Categoria *</label>
+                    <select required>
+                        <option value="">Selecione uma categoria</option>
+                        <option>🚗 Veículos</option>
+                        <option>🏠 Imóveis</option>
+                        <option>📱 Eletrónicos</option>
+                        <option>🛋️ Casa e Móveis</option>
+                        <option>👕 Moda e Beleza</option>
+                        <option>🛠️ Serviços</option>
+                        <option>💼 Empregos</option>
+                        <option>📦 Outros</option>
+                    </select>
+                </div>
+
+                <div class="campo" style="margin-bottom: 24px;">
+                    <label>Descrição Completa *</label>
+                    <textarea rows="6" placeholder="Descreva detalhes, estado, características, etc..." required></textarea>
+                </div>
+
+                <div class="grid-campos" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+                    <div class="campo">
+                        <label>Preço (Kz) *</label>
+                        <input type="number" placeholder="0,00" required>
+                    </div>
+                    <div class="campo">
+                        <label>Telefone para Contato *</label>
+                        <input type="tel" placeholder="9XXXXXXX" required>
+                    </div>
+                </div>
+
+                <div class="grid-campos" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+                    <div class="campo">
+                        <label>Cidade *</label>
+                        <select required>
+                            <option>Luanda</option>
+                            <option>Benguela</option>
+                            <option>Huambo</option>
+                            <option>Malanje</option>
+                            <option>Outra...</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label>Bairro / Zona</label>
+                        <input type="text" placeholder="Ex: Rangel, Benfica, etc...">
+                    </div>
+                </div>
+
+                <div class="campo" style="margin-bottom: 32px;">
+                    <label>Adicionar Fotos *</label>
+                    <input type="file" multiple accept="image/*" required style="border: 1px dashed var(--cor-cinza); padding: 20px;">
+                    <p style="font-size: 13px; color: var(--cor-texto-claro); margin-top: 8px;">As fotos receberão marca d'água automática do Mercado de angola</p>
+                </div>
+
+                <div style="text-align: center;">
+                    <button type="submit" class="btn-principal btn-grande">Publicar Anúncio Gratuitamente</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
