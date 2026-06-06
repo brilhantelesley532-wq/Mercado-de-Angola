@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo | Mercado de Angola</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --cor-admin: #212B36;
+            --cor-sucesso: #00A86B;
+            --cor-perigo: #E53935;
+            --cor-alerta: #FF9500;
+            --cor-primaria: #165DFF;
+            --cor-texto-claro: #637381;
+            --sombra: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        body {
+            background-color: #F4F6F8;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .menu-admin .item-menu:hover {
+            background-color: #2C3744;
+        }
+        .cartao {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: var(--sombra);
+        }
+        .tabela {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+        .tabela th, .tabela td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #EFEFEF;
+        }
+        .tabela th {
+            color: var(--cor-texto-claro);
+            font-weight: 500;
+        }
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .badge-pendente {
+            background-color: #FFF3E0;
+            color: var(--cor-alerta);
+        }
+        .badge-aprovado {
+            background-color: #E8FBF2;
+            color: var(--cor-sucesso);
+        }
+        .badge-recusado {
+            background-color: #FEECEC;
+            color: var(--cor-perigo);
+        }
+        .btn-acao {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+        .btn-verde {
+            background-color: var(--cor-sucesso);
+            color: white;
+        }
+        .btn-vermelho {
+            background-color: var(--cor-perigo);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Superior -->
+    <header style="background-color: var(--cor-admin); color: white; padding: 16px 30px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <h2 style="font-size: 22px;">🛡️ MERCADO DE ANGOLA <span style="color: #86909C; font-size: 16px;">/ Painel Administrativo</span></h2>
+        </div>
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <span><i class="fas fa-user-shield"></i> Administrador Principal</span>
+            <a href="index.html" style="color: white; text-decoration: none;"><i class="fas fa-sign-out-alt"></i> Sair</a>
+        </div>
+    </header>
+
+    <div class="grid-painel" style="display: grid; grid-template-columns: 260px 1fr; min-height: calc(100vh - 70px);">
+
+        <!-- Menu Lateral Admin -->
+        <aside style="background-color: var(--cor-admin); color: white; padding: 20px 0;">
+            <nav class="menu-admin">
+                <a href="#" class="item-menu ativo" style="display: flex; align-items: center; gap: 12px; padding: 16px 24px; background-color: #2C3744; border-left: 4px solid var(--cor-primaria); text-decoration: none; color: white;">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="#" class="item-menu" style="display: flex; align-items: center; gap: 12px; padding: 16px 24px; transition: background 0.2s; text-decoration: none; color: white;">
+                    <i class="fas fa-users"></i> Utilizadores
+                </a>
+                <a href="#" class="item-menu" style="display: flex; align-items: center; gap: 12px; padding: 16px 24px; transition: background 0.2s; text-decoration: none; color: white;">
+                    <i class="fas fa-file-alt"></i> Anúncios
+                </a>
+                <a href="#" class="item-menu" style="display: flex; align-items: center; gap: 12px; padding: 16px 24px; transition: background 0.2s; text-decoration: none; color: white;">
+                    <i class="fas fa-id-card"></i> Verificações (B.I)
+                </a>
+                <a href="#" class="item-menu" style="display: flex; align-items: center; gap: 12px; padding: 16px 24px; transition: background 0.2s; text-decoration: none; color: white;">
+                    <i class="fas fa-money-bill-wave"></i> Pagamentos & VIP
+                </a>
+                <a href="#" class="item-menu" style="display: flex; align-items: center; gap: 12px; padding: 16px 24px; transition: background 0.2s; text-decoration: none; color: white;">
+                    <i class="fas fa-exclamation-triangle"></i> Denúncias
+                </a>
+                <a href="#" class="item-menu" style="display: flex; align-items: center; gap: 12px; padding: 16px 24px; transition: background 0.2s; text-decoration: none; color: white;">
+                    <i class="fas fa-globe"></i> Cidades & Categorias
+                </a>
+                <a href="#" class="item-menu" style="display: flex; align-items: center; gap: 12px; padding: 16px 24px; transition: background 0.2s; text-decoration: none; color: white;">
+                    <i class="fas fa-cog"></i> Configurações
+                </a>
+                <a href="#" class="item-menu" style="display: flex; align-items: center; gap: 12px; padding: 16px 24px; transition: background 0.2s; text-decoration: none; color: white;">
+                    <i class="fas fa-shield-alt"></i> Segurança & Logs
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main style="padding: 30px;">
+
+            <!-- Estatísticas Gerais -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px;">
+                <div class="cartao">
+                    <h4 style="color: var(--cor-texto-claro); font-size: 14px; margin-bottom: 8px;">UTILIZADORES TOTAIS</h4>
+                    <p style="font-size: 32px; font-weight: bold; margin: 0;">1.248</p>
+                    <div style="margin-top: 12px; font-size: 13px; color: var(--cor-sucesso);">↑ 12 novos hoje</div>
+                </div>
+                <div class="cartao">
+                    <h4 style="color: var(--cor-texto-claro); font-size: 14px; margin-bottom: 8px;">ANÚNCIOS ATIVOS</h4>
+                    <p style="font-size: 32px; font-weight: bold; margin: 0;">3.752</p>
+                    <div style="margin-top: 12px; font-size: 13px; color: var(--cor-sucesso);">↑ 48 publicados hoje</div>
+                </div>
+                <div class="cartao">
+                    <h4 style="color: var(--cor-texto-claro); font-size: 14px; margin-bottom: 8px;">PAGAMENTOS / LUCRO</h4>
+                    <p style="font-size: 32px; font-weight: bold; margin: 0;">450.000 Kz</p>
+                    <div style="margin-top: 12px; font-size: 13px; color: var(--cor-alerta);">28 transações</div>
+                </div>
+                <div class="cartao">
+                    <h4 style="color: var(--cor-texto-claro); font-size: 14px; margin-bottom: 8px;">DENÚNCIAS PENDENTES</h4>
+                    <p style="font-size: 32px; font-weight: bold; margin: 0;">18</p>
+                    <div style="margin-top: 12px; font-size: 13px; color: var(--cor-perigo);">Aguardam análise</div>
+                </div>
+            </div>
+
+            <!-- Seções de Gestão -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+                
+                <!-- Gestão de Utilizadores -->
+                <div class="cartao">
+                    <h3 style="font-size: 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+                        <span><i class="fas fa-users"></i> Últimos Utilizadores</span>
+                        <a href="#" style="font-size: 14px; color: var(--cor-primaria); text-decoration: none;">Ver Todos</a>
+                    </h3>
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Estado</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>João Manuel</td>
+                                <td>06/06/2026</td>
+                                <td><span class="badge badge-aprovado">Ativo</span></td>
+                                <td>
+                                    <button class="btn-acao btn-verde"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-acao btn-vermelho"><i class="fas fa-ban"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ana Paula</td>
+                                <td>06/06/2026</td>
+                                <td><span class="badge badge-pendente">Pendente</span></td>
+                                <td>
+                                    <button class="btn-acao btn-verde"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-acao btn-vermelho"><i class="fas fa-ban"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Carlos Alberto</td>
+                                <td>05/06/2026</td>
+                                <td><span class="badge badge-aprovado">Ativo</span></td>
+                                <td>
+                                    <button class="btn-acao btn-verde"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-acao btn-vermelho"><i class="fas fa-ban"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pedidos de Verificação -->
+                <div class="cartao">
+                    <h3 style="font-size: 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+                        <span><i class="fas fa-id-card"></i> Verificações de Identidade</span>
+                        <a href="#" style="font-size: 14px; color: var(--cor-primaria); text-decoration: none;">Ver Todos</a>
+                    </h3>
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th>Utilizador</th>
+                                <th>Documento</th>
+                                <th>Estado</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Marta Sofia</td>
+                                <td>B.I - 123456789LA045</td>
+                                <td><span class="badge badge-pendente">Por Analisar</span></td>
+                                <td>
+                                    <button class="btn-acao btn-verde">Aprovar</button>
+                                    <button class="btn-acao btn-vermelho">Recusar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pedro Miguel</td>
+                                <td>B.I - 987654321LA012</td>
+                                <td><span class="badge badge-pendente">Por Analisar</span></td>
+                                <td>
+                                    <button class="btn-acao btn-verde">Aprovar</button>
+                                    <button class="btn-acao btn-vermelho">Recusar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Luis Fernando</td>
+                                <td>B.I - 456123789LA078</td>
+                                <td><span class="badge badge-aprovado">Aprovado</span></td>
+                                <td>
+                                    <button class="btn-acao btn-verde"><i class="fas fa-eye"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Gestão de Anúncios e Denúncias -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <!-- Anúncios Recentes -->
+                <div class="cartao">
+                    <h3 style="font-size: 20px; margin-bottom: 20px;"><i class="fas fa-file-alt"></i> Anúncios Recentes</h3>
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Preço</th>
+                                <th>Estado</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Telefone Samsung S23</td>
+                                <td>450.000 Kz</td>
+                                <td><span class="badge badge-aprovado">Ativo</span></td>
+                                <td>
+                                    <button class="btn-acao btn-verde"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-acao btn-vermelho"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Terreno em Talatona</td>
+                                <td>15.000.000 Kz</td>
+                                <td><span class="badge badge-aprovado">Ativo</span></td>
+                                <td>
+                                    <button class="btn-acao btn-verde"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-acao btn-vermelho"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Carro Toyota Hilux</td>
+                                <td>8.500.000 Kz</td>
+                                <td><span class="badge badge-pendente">Pendente</span></td>
+                                <td>
+                                    <button class="btn-acao btn-verde">Publicar</button>
+                                    <button class="btn-acao btn-vermelho">Rejeitar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Denúncias -->
+                <div class="cartao">
+                    <h3 style="font-size: 20px; margin-bottom: 20px;"><i class="fas fa-exclamation-triangle"></i> Denúncias Recentes</h3>
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th>Motivo</th>
+                                <th>Anúncio / Perfil</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Produto Ilegal</td>
+                                <td>Arma de Fogo</td>
+                                <td>06/06/2026</td>
+                                <td>
+                                    <button class="btn-acao btn-vermelho">Remover</button>
+                                    <button class="btn-acao btn-verde">Ignorar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Informações Falsas</td>
+                                <td>Venda de Telefone</td>
+                                <td>06/06/2026</td>
+                                <td>
+                                    <button class="btn-acao btn-vermelho">Remover</button>
+                                    <button class="btn-acao btn-verde">Ignorar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Conteúdo Ofensivo</td>
+                                <td>Perfil: Usuario123</td>
+                                <td>05/06/2026</td>
+                                <td>
+                                    <button class="btn-acao btn-vermelho">Banir</button>
+                                    <button class="btn-acao btn-verde">Arquivar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
