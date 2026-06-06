@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta | Mercado de Angola</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="pagina-cadastro">
+
+    <div class="container-cadastro">
+        <div class="cabecalho">
+            <a href="index.html" class="logo-pequeno">🌍 Mercado de Angola</a>
+            <h2>Crie sua Conta Gratuita</h2>
+            <p>Preencha os dados abaixo para começar a comprar e vender.</p>
+        </div>
+
+        <form class="formulario-cadastro" id="formCadastro">
+            <div class="grid-campos">
+                <div class="campo">
+                    <label>Nome Completo *</label>
+                    <input type="text" id="nome" required>
+                </div>
+
+                <div class="campo">
+                    <label>Número de Telefone *</label>
+                    <input type="tel" id="telefone" required placeholder="9XXXXXXX">
+                </div>
+
+                <div class="campo">
+                    <label>E-mail *</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="campo">
+                    <label>Data de Nascimento *</label>
+                    <input type="date" id="nascimento" required>
+                </div>
+
+                <div class="campo">
+                    <label>Cidade / Município *</label>
+                    <select id="cidade" required>
+                        <option value="">Selecione</option>
+                        <option>Bengo</option>
+                        <option>Benguela</option>
+                        <option>Bié</option>
+                        <option>Cabinda</option>
+                        <option>Cuando Cubango</option>
+                        <option>Cunene</option>
+                        <option>Cuanza Norte</option>
+                        <option>Cuanza Sul</option>
+                        <option>Huambo</option>
+                        <option>Huíla</option>
+                        <option>Icolo e Bengo</option>
+                        <option>Luanda</option>
+                        <option>Lunda Norte</option>
+                        <option>Lunda Sul</option>
+                        <option>Malanje</option>
+                        <option>Moxico</option>
+                        <option>Namibe</option>
+                        <option>Uíge</option>
+                        <option>Zaire</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label>Senha *</label>
+                    <input type="password" id="senhaCadastro" required>
+                </div>
+            </div>
+
+            <div class="termos-caixa">
+                <label class="container-checkbox">
+                    Li e concordo com os 
+                    <a href="termos.html" target="_blank">Termos e Condições</a> e 
+                    <a href="privacidade.html" target="_blank">Política de Privacidade</a>
+                    <input type="checkbox" required id="aceitoTermos">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-principal btn-grande">Criar Minha Conta</button>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
