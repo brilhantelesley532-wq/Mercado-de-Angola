@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado de Angola | O mercado certo para negociar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Barra de Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🌍 Mercado de Angola</h1>
+                <p>O mercado certo para negociar</p>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html" class="active"><i class="fas fa-home"></i> Início</a>
+                <a href="categorias.html"><i class="fas fa-th-large"></i> Categorias</a>
+                <a href="pesquisa.html"><i class="fas fa-search"></i> Pesquisar</a>
+                <a href="publicar.html" class="btn-publicar"><i class="fas fa-plus-circle"></i> Publicar Anúncio</a>
+                <a href="login.html" class="btn-entrar"><i class="fas fa-user"></i> Entrar</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Início</a>
+            <a href="categorias.html">Categorias</a>
+            <a href="pesquisa.html">Pesquisar</a>
+            <a href="publicar.html">Publicar</a>
+            <a href="login.html">Entrar / Criar Conta</a>
+        </div>
+    </nav>
+
+    <!-- Seção Principal -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Compre, Venda e Contrate em Todo o Angola</h2>
+                <p>Milhares de anúncios de veículos, imóveis, eletrónicos, serviços e muito mais. Tudo 100% gratuito.</p>
+                
+                <form class="pesquisa-principal" action="pesquisa.html" method="GET">
+                    <input type="text" name="q" placeholder="O que procura hoje? Ex: iPhone, Carro, Casa..." required>
+                    <select name="cidade" required>
+                        <option value="">Todas as Cidades</option>
+                        <option value="bengo">Bengo</option>
+                        <option value="benguela">Benguela</option>
+                        <option value="bie">Bié</option>
+                        <option value="cabinda">Cabinda</option>
+                        <option value="luanda">Luanda</option>
+                        <option value="malanje">Malanje</option>
+                        <option value="namibe">Namibe</option>
+                        <option value="uige">Uíge</option>
+                        <option value="zaire">Zaire</option>
+                    </select>
+                    <button type="submit"><i class="fas fa-search"></i> Pesquisar</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Categorias -->
+        <section class="categorias-home">
+            <div class="container">
+                <h3>📂 Navegue por Categorias</h3>
+                <div class="grid-categorias">
+                    <a href="categoria.html?cat=veiculos" class="card-categoria">
+                        <span class="icone">🚗</span>
+                        <h4>Veículos</h4>
+                        <p>Carros, Motos, Caminhões, Peças</p>
+                    </a>
+                    <a href="categoria.html?cat=imoveis" class="card-categoria">
+                        <span class="icone">🏠</span>
+                        <h4>Imóveis</h4>
+                        <p>Casas, Apartamentos, Terrenos, Lojas</p>
+                    </a>
+                    <a href="categoria.html?cat=eletronicos" class="card-categoria">
+                        <span class="icone">📱</span>
+                        <h4>Eletrónicos</h4>
+                        <p>Telemóveis, Computadores, TVs, Consolas</p>
+                    </a>
+                    <a href="categoria.html?cat=casa" class="card-categoria">
+                        <span class="icone">🛋️</span>
+                        <h4>Casa e Móveis</h4>
+                        <p>Sofás, Camas, Eletrodomésticos</p>
+                    </a>
+                    <a href="categoria.html?cat=moda" class="card-categoria">
+                        <span class="icone">👕</span>
+                        <h4>Moda e Beleza</h4>
+                        <p>Roupas, Calçados, Perfumes</p>
+                    </a>
+                    <a href="categoria.html?cat=servicos" class="card-categoria">
+                        <span class="icone">🛠️</span>
+                        <h4>Serviços</h4>
+                        <p>Construção, Mecânico, Eletricista</p>
+                    </a>
+                    <a href="categoria.html?cat=empregos" class="card-categoria">
+                        <span class="icone">💼</span>
+                        <h4>Empregos</h4>
+                        <p>Vagas, Oportunidades, Cadastros</p>
+                    </a>
+                    <a href="categoria.html?cat=outros" class="card-categoria">
+                        <span class="icone">📦</span>
+                        <h4>Outros</h4>
+                        <p>Animais, Livros, Alimentos, Tudo</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anúncios Recentes -->
+        <section class="anuncios-recentes">
+            <div class="container">
+                <div class="cabecalho-secao">
+                    <h3>🆕 Anúncios Recentes</h3>
+                    <a href="todos-anuncios.html" class="ver-todos">Ver todos <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="grid-anuncios" id="listaAnuncios">
+                    <!-- ÁREA VAZIA - OS USUÁRIOS VÃO ADICIONAR AQUI -->
+                    <div class="vazio-mensagem">
+                        <i class="fas fa-box-open"></i>
+                        <p>Ainda não há anúncios publicados.</p>
+                        <a href="publicar.html" class="btn-principal">Seja o primeiro a publicar!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destaques e VIP -->
+        <section class="destaques">
+            <div class="container">
+                <h3>⭐ Anúncios em Destaque & VIP</h3>
+                <div class="grid-anuncios" id="anunciosDestaque">
+                    <div class="vazio-mensagem pequeno">
+                        <p>Nenhum anúncio em destaque no momento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção "O Que Eu Preciso" -->
+        <section class="o-que-eu-preciso">
+            <div class="container">
+                <h3>📢 O Que Você Precisa?</h3>
+                <p>Publique o que procura, quanto paga e onde está. Vendedores entrarão em contato com você!</p>
+                <a href="publicar-procura.html" class="btn-principal">Publicar Pedido</a>
+            </div>
+        </section>
+
+        <!-- Dicas de Segurança -->
+        <section class="dicas-seguranca">
+            <div class="container">
+                <h3>🛡️ Dicas de Segurança</h3>
+                <ul>
+                    <li><i class="fas fa-exclamation-circle"></i> Nunca pague antes de ver o produto pessoalmente.</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Encontre-se em locais públicos: Shopping Fortaleza, Xyami ou em frente a esquadras.</li>
+                    <li><i class="fas fa-globe"></i> Produtos de links externos (Amazon, Shopee) são internacionais e tem taxas e prazo maior.</li>
+                </ul>
+                <a href="dicas-seguranca.html" class="btn-segundario">Ver todas as dicas</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="grid-rodape">
+                <div class="coluna">
+                    <h4>Mercado de Angola</h4>
+                    <p>O maior e mais seguro mercado de classificados do país.</p>
+                    <div class="redes-sociais">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="coluna">
+                    <h4>Links Úteis</h4>
+                    <a href="dicas-seguranca.html">Dicas de Segurança</a>
+                    <a href="termos.html">Termos e Condições</a>
+                    <a href="privacidade.html">Política de Privacidade</a>
+                    <a href="suporte.html">Suporte</a>
+                </div>
+
+                <div class="coluna">
+                    <h4>Para Vendedores</h4>
+                    <a href="publicar.html">Publicar Anúncio Grátis</a>
+                    <a href="planos-vip.html">Planos VIP</a>
+                    <a href="destaques.html">Anúncios Destacados</a>
+                </div>
+
+                <div class="coluna">
+                    <h4>Contato</h4>
+                    <p><i class="fab fa-whatsapp"></i> 933 591 367</p>
+                    <p><i class="fas fa-envelope"></i> contato@mercadodeangola.ao</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2026 Mercado de Angola - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
