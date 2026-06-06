@@ -347,5 +347,32 @@
     </div>
 script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
  <script src="js/config.js"></script>
+    <script>
+    // ⛔ VERIFICAR SE ESTÁ LOGADO
+    const dadosSessao = localStorage.getItem('utilizadorLogado');
+    
+    // Se não existir sessão, volta para o login
+    if (!dadosSessao) {
+        alert("⚠️ Acesso Negado! Você precisa fazer login primeiro.");
+        window.location.href = "login.html";
+    }
+
+    // 🛡️ VERIFICAR PERMISSÕES ESPECÍFICAS
+    const utilizador = JSON.parse(dadosSessao);
+    const paginaAtual = window.location.pathname;
+
+    // Regra para página de ADMIN
+    if (paginaAtual.includes('admin') && utilizador.nivel_acesso !== 'admin') {
+        alert("❌ Acesso proibido: Apenas Administradores podem entrar aqui.");
+        window.location.href = "index.html";
+    }
+
+    // Regra para página de MODERADOR
+    if (paginaAtual.includes('moderador') && utilizador.nivel_acesso !== 'moderador' && utilizador.nivel_acesso !== 'admin') {
+        alert("❌ Acesso proibido: Apenas Moderadores ou Administradores.");
+        window.location.href = "index.html";
+    }
+</script>
+
 </body>
 </html>
