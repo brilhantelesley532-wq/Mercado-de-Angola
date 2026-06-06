@@ -28,6 +28,13 @@
             </div>
         </div>
     </nav>
+<div class="cartao">
+    <h3>Os Seus Dados</h3>
+    <p><strong>Nome:</strong> <span id="mostrarNome"></span></p>
+    <p><strong>Telefone:</strong> <span id="mostrarTelefone"></span></p>
+    <p><strong>Cidade:</strong> <span id="mostrarCidade"></span></p>
+    <p><strong>Estado:</strong> <span id="mostrarEstado"></span></p>
+</div>
 
     <!-- Conteúdo Principal -->
     <main class="container" style="padding: 40px 0;">
@@ -187,6 +194,18 @@ function terminarSessao() {
     
     // Manda para a página de login
     window.location.href = "login.html";
+}
+</script>
+<script>
+// Carregar dados do utilizador logado
+window.onload = function() {
+    const sessao = JSON.parse(localStorage.getItem('utilizadorLogado'));
+    
+    // Colocar os dados nos espaços certos
+    document.getElementById('mostrarNome').textContent = sessao.nome;
+    document.getElementById('mostrarTelefone').textContent = sessao.telefone;
+    document.getElementById('mostrarCidade').textContent = sessao.cidade;
+    document.getElementById('mostrarEstado').textContent = sessao.verificado ? "✅ Verificado" : "❌ Não Verificado";
 }
 </script>
 
