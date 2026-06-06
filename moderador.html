@@ -104,6 +104,10 @@
     </style>
 </head>
 <body>
+<!-- 🔘 BOTÃO DE SAIR -->
+<button onclick="terminarSessao()" class="btn-segundario">
+    <i class="fas fa-sign-out-alt"></i> Sair
+</button>
 
     <!-- Barra Superior -->
     <header style="background-color: var(--cor-mod); color: white; padding: 16px 30px; display: flex; justify-content: space-between; align-items: center;">
@@ -332,6 +336,17 @@ script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
         alert("❌ Acesso proibido: Apenas Moderadores ou Administradores.");
         window.location.href = "index.html";
     }
+</script>
+<script>
+function terminarSessao() {
+    // Apaga os dados da sessão do navegador
+    localStorage.removeItem('utilizadorLogado');
+    
+    alert("✅ Sessão encerrada com sucesso! Volte sempre.");
+    
+    // Manda para a página de login
+    window.location.href = "login.html";
+}
 </script>
 
 </body>
